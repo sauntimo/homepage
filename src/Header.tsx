@@ -39,10 +39,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
       <div className="mr-8">
-        <ThemeSelector
-          activeTheme={activeTheme}
-          onChangeTheme={onChangeTheme}
-        />
+        <ThemeSelector activeTheme={activeTheme} onChangeTheme={onChangeTheme} />
       </div>
     </nav>
   );
