@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({
               key={page.title}
               className={`btn ${
                 page.route === activeRoute ? "btn-accent" : "btn-ghost"
-              } btn-sm rounded-btn`}
+              } btn-sm rounded-btn mx-1`}
               href={`/${page.route}`}
             >
               {page.title}
