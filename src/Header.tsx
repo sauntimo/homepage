@@ -1,6 +1,6 @@
 import { Theme, ThemeSelector } from "./ThemeSelector";
 
-interface HeaderProps {
+export interface HeaderProps {
   activeRoute: string;
   activeTheme: Theme;
   onChangeTheme: (activeTheme: Theme) => void;
@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
   onChangeTheme,
 }: HeaderProps) => {
   return (
-    <div className="navbar shadow-lg bg-neutral text-neutral-content">
+    <nav className="navbar shadow-lg bg-neutral text-neutral-content">
       <div className="flex-none px-2 mx-2">
         <span className="text-lg font-bold">sauntimo.org</span>
       </div>
@@ -31,6 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
               className={`btn ${
                 page.route === activeRoute ? "btn-accent" : "btn-ghost"
               } btn-sm rounded-btn`}
+              href={`/${page.route}`}
             >
               {page.title}
             </a>
@@ -43,6 +44,6 @@ export const Header: React.FC<HeaderProps> = ({
           onChangeTheme={onChangeTheme}
         />
       </div>
-    </div>
+    </nav>
   );
 };

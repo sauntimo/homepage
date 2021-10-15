@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 
 import "./index.css";
-import { Header } from "./Header";
 import { Theme } from "./ThemeSelector";
 import { Hero } from "./Hero";
+import { Layout } from "./Layout";
 
 export const App: React.FC = () => {
   const [activeTheme, setActiveTheme] = useState<Theme>("dark");
@@ -15,12 +15,13 @@ export const App: React.FC = () => {
         <title>sauntimo.org</title>
         <html data-theme={activeTheme} />
       </Helmet>
-      <Header
+      <Layout
         activeRoute=""
         activeTheme={activeTheme}
         onChangeTheme={setActiveTheme}
-      />
-      <Hero />
+      >
+        <Hero />
+      </Layout>
     </div>
   );
 };
