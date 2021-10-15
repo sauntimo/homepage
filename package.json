@@ -13,17 +13,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && tsc --pretty --noEmit"
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint --cache --fix",
-      "git add"
-    ],
-    "src/**/*.{js,jsx}": [
-      "eslint --cache --fix",
-      "git add"
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write --loglevel warn",
+      "eslint --cache --fix --max-warnings 0"
     ]
   },
   "dependencies": {
