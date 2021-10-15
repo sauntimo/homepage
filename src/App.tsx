@@ -1,3 +1,4 @@
+import React from "react";
 import { Helmet } from "react-helmet";
 
 import "./index.css";
@@ -7,21 +8,17 @@ import { Layout } from "./Layout";
 import { useLocalStorage } from "react-use";
 
 export const App: React.FC = () => {
-  const [activeTheme, setActiveTheme] = useLocalStorage<Theme>("theme", "dark");
+  const [activeTheme] = useLocalStorage<Theme>("theme", "dark");
 
   return (
     <div className="App">
-      <Helmet>
+      {/* <Helmet>
         <title>sauntimo.org</title>
         <html data-theme={activeTheme} />
-      </Helmet>
-      <Layout
-        activeRoute=""
-        activeTheme={activeTheme ?? "dark"}
-        onChangeTheme={setActiveTheme}
-      >
+      </Helmet> */}
+      {/* <Layout activeRoute="/">
         <Hero />
-      </Layout>
+      </Layout> */}
     </div>
   );
 };

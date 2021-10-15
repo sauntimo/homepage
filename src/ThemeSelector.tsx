@@ -1,8 +1,5 @@
 import React from "react";
-interface ThemeSelectorProps {
-  activeTheme: Theme;
-  onChangeTheme: (activeTheme: Theme) => void;
-}
+import { useLocalStorage } from "react-use";
 
 const themeValues = [
   "light",
@@ -30,10 +27,15 @@ const themeValues = [
 
 export type Theme = typeof themeValues[number];
 
+interface ThemeSelectorProps {
+  activeTheme: Theme;
+  onChangeTheme: (activeTheme: Theme) => void;
+}
+
 export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   activeTheme,
   onChangeTheme,
-}: ThemeSelectorProps) => {
+}) => {
   return (
     <div className="dropdown">
       <div tabIndex={0} className="m-1 btn">

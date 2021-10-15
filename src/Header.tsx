@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Theme, ThemeSelector } from "./ThemeSelector";
 
 export interface HeaderProps {
@@ -7,10 +9,10 @@ export interface HeaderProps {
 }
 
 const pages = [
-  { title: "Home", route: "" },
-  { title: "Portfolio", route: "portfolio" },
-  { title: "About", route: "about" },
-  { title: "Contact", route: "contact" },
+  { title: "Home", route: "/" },
+  { title: "Portfolio", route: "/portfolio" },
+  { title: "About", route: "/about" },
+  { title: "Contact", route: "/contact" },
 ];
 
 export const Header: React.FC<HeaderProps> = ({
@@ -31,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
               className={`btn ${
                 page.route === activeRoute ? "btn-accent" : "btn-ghost"
               } btn-sm rounded-btn mx-1`}
-              href={`/${page.route}`}
+              href={page.route}
             >
               {page.title}
             </a>
