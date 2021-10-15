@@ -1,3 +1,4 @@
+import React from "react";
 interface ThemeSelectorProps {
   activeTheme: Theme;
   onChangeTheme: (activeTheme: Theme) => void;
@@ -38,7 +39,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
       <div tabIndex={0} className="m-1 btn">
         Change Theme
       </div>
-      <div className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-40 rounded-b-box bg-base-200 text-base-content">
+      <div className="mt-16 overflow-y-auto shadow-2xl top-px dropdown-content h-96 w-44 rounded-b-box bg-base-200 text-base-content">
         <ul tabIndex={0} className="menu p-4 compact">
           {themeValues.map((theme) => (
             <li key={theme}>
@@ -47,6 +48,7 @@ export const ThemeSelector: React.FC<ThemeSelectorProps> = ({
                 onClick={() => onChangeTheme(theme)}
               >
                 {theme}
+                {theme === activeTheme ? " ✅" : ""}
               </a>
             </li>
           ))}
