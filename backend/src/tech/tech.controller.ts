@@ -1,5 +1,5 @@
 import { ApiResponse } from "./../../../shared/types.d";
-import { Controller, Get } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 import { TechService } from "./tech.service";
 import { Tech } from "./tech";
 
@@ -9,7 +9,12 @@ export class TechController {
 
   @Get()
   getAllTech(): Promise<ApiResponse<Tech[]>> {
-    console.log("Hit /tech/");
     return this.techService.getAllTech();
+  }
+
+  @Post()
+  createTech(@Body() newTech: Tech): Promise<ApiResponse<never>> {
+    console.log("Hit POST /tech/");
+    return this.techService.createTech(newTech);
   }
 }

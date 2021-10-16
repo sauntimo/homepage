@@ -7,6 +7,7 @@ import "./env";
 // console.log(JSON.stringify(process.env, undefined, 2));
 
 import { createClient } from "@supabase/supabase-js";
+import { ValidationPipe } from "@nestjs/common";
 
 const supabaseUrl = process.env.SUPABASE_URL ?? "xxx";
 const supabaseKey = process.env.SUPABASE_SERVICE_KEY ?? "xxx";
@@ -14,6 +15,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
   await app.listen(3001);
 }
