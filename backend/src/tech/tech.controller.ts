@@ -9,6 +9,7 @@ export class TechController {
 
   @Get()
   getAllTech(): Promise<ApiResponse<Tech[]>> {
+    console.log("Hit /tech/");
     return this.techService.getAllTech();
   }
 }

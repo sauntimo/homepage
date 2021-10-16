@@ -10,7 +10,7 @@ export interface HeaderProps {
 
 const pages = [
   { title: "Home", route: "/" },
-  { title: "Portfolio", route: "/portfolio" },
+  { title: "Tech", route: "/tech" },
   { title: "About", route: "/about" },
   { title: "Contact", route: "/contact" },
 ];

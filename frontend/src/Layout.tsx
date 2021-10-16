@@ -20,7 +20,7 @@ export const Layout: React.FC<RouteConfigComponentProps> = ({
         <title>sauntimo.org</title>
         <html data-theme={activeTheme} />
       </Helmet>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col min-w-96">
         <Header
           activeRoute={location.pathname}
           activeTheme={activeTheme ?? "dark"}

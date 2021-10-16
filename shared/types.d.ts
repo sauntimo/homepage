@@ -13,3 +13,11 @@ interface ApiResponseFailure extends ApiResponseBase {
 }
 
 export type ApiResponse<T = never> = ApiResponseSuccess<T> | ApiResponseFailure;
+
+export interface Tech {
+  title: string;
+  description: string;
+  website: string;
+  logo_url: string;
+  stack_order: number;
+}

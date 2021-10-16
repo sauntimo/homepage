@@ -12,9 +12,9 @@ export const routes: RouteConfig[] = [
         component: loadable(() => import("../pages/home")),
       },
       {
-        path: "/portfolio",
+        path: "/tech",
         exact: true,
-        component: loadable(() => import("../pages/portfolio")),
+        component: loadable(() => import("../pages/tech")),
       },
       {
         path: "/about",
