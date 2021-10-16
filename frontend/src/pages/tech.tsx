@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import { useForm, UseFormRegister, FieldValues } from "react-hook-form";
 
 import { Tech } from "../../../shared/types";
@@ -8,7 +8,7 @@ const TechPage: React.FC = () => {
   const { tech, isLoading, isError } = useTech();
 
   if (isLoading) {
-    return <p>Loading some cool tech</p>;
+    return <p>Loading some cool tech...</p>;
   }
 
   if (isError) {
@@ -37,8 +37,15 @@ const TechCard: React.FC<Tech> = ({
   website,
   logo_url,
 }) => {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className="card bordered shadow-lg w-full pt-8">
+    <div
+      className="card bordered shadow-lg w-full pt-8 cursor-pointer"
+      onClick={() => window.open(website, "_blank")}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+    >
       <figure>
         <img src={logo_url} className="max-h-20 h-20 object-contain px-8" />
       </figure>
@@ -50,7 +57,11 @@ const TechCard: React.FC<Tech> = ({
           <p>{description}</p>
         </div>
         <div className="justify-end content-end card-actions">
-          <a href={website} target="_blank" className="btn btn-secondary">
+          <a
+            href={website}
+            target="_blank"
+            className={`btn btn-secondary ${active ? "" : "btn-outline"}`}
+          >
             Website
           </a>
         </div>
@@ -99,7 +110,7 @@ const TechForm: React.FC = () => {
   };
 
   return (
-    <div className="card bordered m-8 p-4 w-96">
+    <div className="card bordered m-8 p-4 w-96 shadow-lg">
       <span className="text-xl font-bold">
         Create a new item in the Tech Stack
       </span>

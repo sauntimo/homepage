@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Hero: React.FC = () => {
   return (
     <div className="hero flex-1 bg-base-200">

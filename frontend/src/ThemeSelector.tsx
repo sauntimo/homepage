@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocalStorage } from "react-use";
 
 const themeValues = [
   "light",
