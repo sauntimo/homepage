@@ -1,7 +1,6 @@
-import { ApiResponse } from "./../../../shared/types.d";
+import { ApiResponse, Tech } from "./../../../shared/types";
 import { supabase } from "../main";
 import { Injectable } from "@nestjs/common";
-import { Tech } from "./tech";
 
 @Injectable()
 export class TechService {

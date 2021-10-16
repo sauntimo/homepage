@@ -20,4 +20,5 @@ export interface Tech {
   website: string;
   logo_url: string;
   stack_order: number;
+  categories: string;
 }

@@ -36,16 +36,29 @@ const TechCard: React.FC<Tech> = ({
   description,
   website,
   logo_url,
+  categories,
 }) => {
   const [active, setActive] = useState(false);
 
   return (
     <div
-      className="card bordered shadow-lg w-full pt-8 cursor-pointer"
+      className="card bordered shadow-lg w-full cursor-pointer"
       onClick={() => window.open(website, "_blank")}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
     >
+      <div className="p-2">
+        {categories.split(",").map((category) => (
+          <div
+            key={category}
+            className={`badge badge-md ${
+              category === "backend" ? "badge-accent" : "badge-secondary"
+            } p-3 mx-1`}
+          >
+            {category}
+          </div>
+        ))}
+      </div>
       <figure>
         <img src={logo_url} className="max-h-20 h-20 object-contain px-8" />
       </figure>
@@ -120,6 +133,7 @@ const TechForm: React.FC = () => {
         <TextInput label="website" register={register} />
         <TextInput label="logo_url" register={register} />
         <TextInput label="stack_order" register={register} />
+        <TextInput label="categories" register={register} />
         <div className="form-control mt-4">
           <input type="submit" className="btn btn-primary btn-md" />
         </div>
