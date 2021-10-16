@@ -14,7 +14,6 @@ export class TechController {
 
   @Post()
   createTech(@Body() newTech: Tech): Promise<ApiResponse<never>> {
-    console.log("Hit POST /tech/");
     return this.techService.createTech(newTech);
   }
 }
