@@ -40,7 +40,7 @@ const TechCard: React.FC<Tech> = ({
   return (
     <div className="card bordered shadow-lg w-full pt-8">
       <figure>
-        <img src={logo_url} className="max-h-20 object-contain px-8" />
+        <img src={logo_url} className="max-h-20 h-20 object-contain px-8" />
       </figure>
       <div className="card-body flex flex-col">
         <div>
