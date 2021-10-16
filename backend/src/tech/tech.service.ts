@@ -7,7 +7,10 @@ import { Tech } from "./tech";
 @Injectable()
 export class TechService {
   async getAllTech(): Promise<ApiResponse<Tech[]>> {
-    const { data, error } = await supabase.from("tech").select(`*`);
+    const { data, error } = await supabase
+      .from("tech")
+      .select(`*`)
+      .order("stack_order", { ascending: true });
 
     if (error) {
       return {
