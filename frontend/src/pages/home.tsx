@@ -1,8 +1,8 @@
 import React from "react";
-import { Hero } from "../Hero";
+import { Hero } from "../components/Hero";
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return <Hero />;
 };
 
-export default Home;
+export default HomePage;

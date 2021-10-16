@@ -1,7 +1,7 @@
 import React from "react";
 import { renderRoutes, RouteConfigComponentProps } from "react-router-config";
 
-import "./index.css";
+import "../../index.css";
 import { Header } from "./Header";
 import { Helmet } from "react-helmet";
 import { useLocalStorage } from "react-use";

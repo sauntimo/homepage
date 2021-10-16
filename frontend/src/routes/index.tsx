@@ -1,6 +1,6 @@
 import loadable from "@loadable/component";
 import { RouteConfig } from "react-router-config";
-import { Layout } from "../Layout";
+import { Layout } from "../components/layout/Layout";
 
 export const routes: RouteConfig[] = [
   {
