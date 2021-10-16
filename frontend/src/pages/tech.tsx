@@ -122,18 +122,17 @@ const TechForm: React.FC = () => {
     reset();
   };
 
+  const fields = ["title", "description", "website", "logo_url", "categories"];
+
   return (
     <div className="card bordered m-8 p-4 w-96 shadow-lg">
       <span className="text-xl font-bold">
         Create a new item in the Tech Stack
       </span>
       <form onSubmit={handleSubmit<Tech>(onSubmit)}>
-        <TextInput label="title" register={register} />
-        <TextInput label="description" register={register} />
-        <TextInput label="website" register={register} />
-        <TextInput label="logo_url" register={register} />
-        <TextInput label="stack_order" register={register} />
-        <TextInput label="categories" register={register} />
+        {fields.map((field) => (
+          <TextInput key={field} label={field} register={register} />
+        ))}
         <div className="form-control mt-4">
           <input type="submit" className="btn btn-primary btn-md" />
         </div>
