@@ -42,10 +42,14 @@ const TechCard: React.FC<Tech> = ({
       <figure>
         <img src={logo_url} className="max-h-20 object-contain px-8" />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{description}</p>
-        <div className="justify-end card-actions">
+      <div className="card-body flex flex-col">
+        <div>
+          <h2 className="card-title capitalize">{title}</h2>
+        </div>
+        <div className="flex-grow">
+          <p>{description}</p>
+        </div>
+        <div className="justify-end content-end card-actions">
           <a href={website} target="_blank" className="btn btn-secondary">
             Website
           </a>
