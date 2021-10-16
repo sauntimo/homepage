@@ -38,9 +38,9 @@ const TechCard: React.FC<Tech> = ({
   logo_url,
 }) => {
   return (
-    <div className="card bordered shadow-2xl w-full pt-8">
+    <div className="card bordered shadow-lg w-full pt-8">
       <figure>
-        <img src={logo_url} className="max-h-20 object-contain" />
+        <img src={logo_url} className="max-h-20 object-contain px-8" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
