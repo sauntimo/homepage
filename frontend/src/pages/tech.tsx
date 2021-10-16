@@ -126,7 +126,14 @@ const TechForm: React.FC = () => {
     reset();
   };
 
-  const fields = ["title", "description", "website", "logo_url", "categories"];
+  const fields = [
+    "title",
+    "description",
+    "website",
+    "logo_url",
+    "stack_order",
+    "categories",
+  ];
 
   return (
     <div className="card bordered m-8 p-4 w-96 shadow-lg">
