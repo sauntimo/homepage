@@ -1,5 +1,8 @@
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { useForm, UseFormRegister, FieldValues } from "react-hook-form";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import { Tech } from "../../../shared/types";
 import { useTech } from "../hooks/Tech";
@@ -75,7 +78,8 @@ const TechCard: React.FC<Tech> = ({
             target="_blank"
             className={`btn btn-secondary ${active ? "" : "btn-outline"}`}
           >
-            Website
+            {title} Website{" "}
+            <FontAwesomeIcon className="ml-2" icon={faArrowRight} />
           </a>
         </div>
       </div>
