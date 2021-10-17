@@ -2,13 +2,15 @@ FROM node:16-alpine3.12
 
 WORKDIR /app
 
-ADD package.json /app/package.json
-ADD yarn.lock /app/yarn.lock
+ADD ./backend/package.json /app/package.json
+ADD ./backend/yarn.lock /app/yarn.lock
 
-RUN yarn install --production
+RUN yarn install
 
-ADD . /app
+COPY ./shared /shared
+
+ADD ./backend /app
 
 EXPOSE 3001
 
-CMD ["yarn", "start:prod"]
+CMD ["yarn", "start:dev"]

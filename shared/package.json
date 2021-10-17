@@ -1,0 +1,8 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "code common to front and backends",
+  "main": "index.ts",
+  "author": "Tim Saunders",
+  "license": "UNLICENSED"
+}

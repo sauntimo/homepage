@@ -1,4 +1,4 @@
-import { ApiResponse, Tech } from "./../../../shared/types";
+import { ApiResponse, Tech } from "shared/types";
 import { Body, Controller, Get, Post } from "@nestjs/common";
 import { TechService } from "./tech.service";
 

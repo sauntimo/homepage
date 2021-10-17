@@ -1,4 +1,4 @@
-import { ApiResponse, Tech } from "./../../../shared/types";
+import { ApiResponse, Tech } from "shared/types";
 import { supabase } from "../main";
 import { Injectable } from "@nestjs/common";
 
