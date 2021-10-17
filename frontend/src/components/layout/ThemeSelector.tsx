@@ -6,7 +6,7 @@ const themeValues = [
   "cupcake",
   "bumblebee",
   "emerald",
-  "corporate",
+  // "corporate",
   // "synthwave",
   // "retro",
   "cyberpunk",
