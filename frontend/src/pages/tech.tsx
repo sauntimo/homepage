@@ -3,7 +3,7 @@ import React from "react";
 import { useTech } from "../hooks/Tech";
 
 import { TechCard } from "../components/tech/TechCard";
-import { TechForm } from "../components/form/Form";
+import { CreateTechModal } from "../components/tech/CreateTechModal";
 
 const TechPage: React.FC = () => {
   const { tech, isLoading, isError } = useTech();
@@ -24,7 +24,7 @@ const TechPage: React.FC = () => {
         ))}
       </div>
       <div>
-        <TechForm />
+        <CreateTechModal />
       </div>
     </>
   );
