@@ -1,16 +1,21 @@
-FROM node:16-alpine3.12
+# React + Deps
+FROM node:16-alpine3.12 as build-deps
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY ./frontend/package.json /app/package.json
-COPY ./frontend/yarn.lock /app/yarn.lock
+COPY package.json /app/package.json
+COPY yarn.lock /app/yarn.lock
 
 RUN yarn install
 
-COPY ./shared /shared
+COPY ./../shared /usr/src/app/shared
+COPY ./ /usr/src/app
 
-COPY ./frontend /app
+RUN yarn build
 
+
+# Nginx
+FROM nginx:1.12-alpine
+COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
 EXPOSE 3000
-
-CMD ["yarn", "dev"]
+CMD ["nginx", "-g", "daemon off;"]
